@@ -13,7 +13,7 @@ class Order < ApplicationRecord
     validates :shipping_address, presence: true
     def set_payment_with!(method)
         update_columns(payment_method: method)
- end
+      end
 
     def pay!
         update_columns(is_paid: true)
