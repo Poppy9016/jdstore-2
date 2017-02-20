@@ -23,7 +23,11 @@
                     <dd class="goods-info-head-colors clearfix"> <span class="style-name">库存：<%= @product.quantity %></span>
                     </dd>
                     <dd class="goods-info-head-cart" >
-                        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn  btn-primary goods-add-cart-btn") %>
+                        <% if @product.quantity.present? && @product.quantity > 0 %>
+                            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn  btn-primary goods-add-cart-btn") %>
+                        <% else %>
+                            已销售一空，无法购买
+                             <% end %>
                     </dd>
                 </dl>
             </dt>
