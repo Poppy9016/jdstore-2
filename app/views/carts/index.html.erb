@@ -26,9 +26,7 @@
                         <div class="item-box">
                             <div class="item-table J_cartGoods" data-info="{ commodity_id:'1161600032', gettype:'buy', itemid:'2161600029_0_buy', num:'1'} ">
                                 <div class="item-row clearfix">
-                                    <div class="col col-check">
-                                        <!-- <i class="iconfont icon-checkbox icon-checkbox-selected J_itemCheckbox" data-itemid="2161600029_0_buy" data-status="1">√</i>   -->
-                                    </div>
+                                    <div class="col col-check"> </div>
                                     <div class="col col-img">
                                         <%= link_to product_path(cart_item.product) do %>
                                             <% if cart_item.product.image.present? %>
@@ -48,7 +46,7 @@
                                     <div class="col col-num">
                                         <div class="change-goods-num clearfix J_changeGoodsNum">
                                             <%= link_to("-", remove_quantity_cart_item_path(cart_item.product_id), class: "", method: :post) %>
-                                            <input class=".countNumber-input" type="text" value="<%= cart_item.quantity %>">
+                                            <input class="countNumber-input" type="text" value="<%= cart_item.quantity %>">
                                             <%= link_to("+", add_quantity_cart_item_path(cart_item.product_id), class: "", method: :post) %>
                                         </div>
                                     </div>
@@ -75,7 +73,8 @@
                 <span class="cart-total">共 <i id="J_cartTotalNum"><%= current_cart.products.count %></i> 件商品</span>
             </div>
             <span class="total-price">
-                合计（不含运费）：<em id="J_cartTotalPrice"><%= render_cart_total_price(current_cart) %> </em>元
+                合计（不含运费）：<em id="J_cartTotalPrice">
+        <%= render_cart_total_price(current_cart) %></em>元
                 </span>
             <%= link_to("去结算", checkout_carts_path, method: :post, class: "btn btn-a btn btn-primary")%>
         </div>

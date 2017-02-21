@@ -34,12 +34,12 @@ class CartItemsController < ApplicationController
 
     def remove_quantity
         @cart_item = current_cart.cart_items.find_by_product_id(params[:id])
-        if @cart_item.quantity > 0
+        if @cart_item.quantity > 1
             @cart_item.quantity -= 1
             @cart_item.save
             redirect_to carts_path
-        elsif @cart_item.quantity == 0
-            redirect_to carts_path, alert: '商品不能少于零！'
+        elsif @cart_item.quantity == 1
+            redirect_to carts_path, alert: '商品不能少于1'
         end
     end
 

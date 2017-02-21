@@ -4,8 +4,12 @@ class CartsController < ApplicationController
     end
 
     def clean
-        current_cart.clean!
-        flash[:warning] = '已清空购物车'
-        redirect_to carts_path
+        if current_cart.cart_items.present?
+            current_cart.clean!
+            flash[:warning] = '已清空购物车'
+        else
+            flash[:alert] = '购物车内没有物品,请先加入物品'
+        end
+        redirect_to :back
     end
 end
