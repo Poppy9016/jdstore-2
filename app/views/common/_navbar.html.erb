@@ -1,29 +1,77 @@
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">JDStore </a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <% if !current_user %>
-                    <li><%= link_to("注册", new_user_registration_path) %> </li>
-                    <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li
-                <% else %>
-                    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Hi!, <%= current_user.email %>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+<nav class="g-hd2" id="gTopbar">
+    <div id="" style="margin-top: 60px;">
+        <div id="js-funcTab" class="header_fixed">
+            <div class="g-row">
+                <a class="logo" href="/" title="" target="_top">
+                    <img src="https://ww2.sinaimg.cn/large/006tNc79ly1fcunsr7uq7j304601vq2t.jpg"/>
+                    <span class="dec">每个人都应该被温柔对待</span>
+                </a>
+                <div class="notLogin">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <%= link_to carts_path do  %>
+                                购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                          <% end %>
+                        </li>
+                        <% if !current_user %>
+                            <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+                        <% else %>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <%= current_user.email %>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <% if current_user.admin? %>
+                                        <li>
+                                            <%= link_to("后台设置", admin_products_path ) %>
+                                        </li>
+                                    <% end %>
+                                    <li> <%= link_to(content_tag(:i, '退出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                                </ul>
+                            </li>
+                        <% end %>
                     </ul>
-                </li>
-            <% end %>
-        </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.navbar-collapse -->
-</div>
-<!-- /.container-fluid -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="loginmodal-container">
+                <h1>登陆</h1>
+                <br>
+                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <div class="form-inputs">
+                        <%= f.input :email, label: "邮箱",placeholder: "请输入邮箱",required: false, autofocus: true %>
+                        <%= f.input :password, label: "密码",placeholder: "请输入密码",required: false %>
+                        <%= f.input :remember_me, label: "记住密码",as: :boolean if devise_mapping.rememberable? %>
+                    </div>
+                    <div class="form-actions">
+                        <%= f.button :submit, "登陆" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>注册</h1>
+                <br>
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <%= f.error_notification %>
+                    <div class="form-inputs">
+                        <%= f.input :email, label: "邮箱",placeholder: "请输入邮箱",required: true, autofocus: true %>
+                        <%= f.input :password, label: "密码",placeholder: "请输入密码",required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                        <%= f.input :password_confirmation, label: "重复密码",placeholder: "再次输入密码",required: true %>
+                    </div>
+                    <div class="form-actions">
+                        <%= f.button :submit, "注册" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </nav>

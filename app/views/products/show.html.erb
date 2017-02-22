@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-6">
+        <% if @product.image.present? %>
+            <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+        <% else %>
+            <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+        <% end %>
+    </div>
+    <div class="span7 goods-info-rightbox">
+        <dl class="goods-info-box">
+            <dt class="goods-info-head">
+                <dl>
+                    <dt class="goods-name"> <%= @product.title %> </dt>
+                    <dd class="goods-subtitle">
+                        <p>   <%= @product.description %> </p>
+                    </dd>
+                    <dd class="goods-info-head-price clearfix">
+                        <b><%= @product.price %> </b>
+                        <i>&nbsp;元</i>
+                    </dd>
+                    <dd class="goods-info-head-colors clearfix"> <span class="style-name">颜色：灰色</span>
+                    </dd>
+                    <dd class="goods-info-head-colors clearfix"> <span class="style-name">库存：<%= @product.quantity %></span>
+                    </dd>
+                    <dd class="goods-info-head-cart" >
+                        <% if @product.quantity.present? && @product.quantity > 0 %>
+                            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn  btn-primary goods-add-cart-btn") %>
+                        <% else %>
+                            已销售一空，无法购买
+                             <% end %>
+                    </dd>
+                </dl>
+            </dt>
+        </dl>
+    </div>
+</div>
+<!--规格-->
+<div class="g-row">
+    <div class="goods-detail-nav-name-block">
+        <div class="container main-block">
+            <div class="border-line"></div>
+            <h2 class="nav-name">详情描述</h2>
+        </div>
+    </div>
+    <ul class="param-list">
+        <li>
+            <img class="square" src="https://ww4.sinaimg.cn/large/006tKfTcly1fcurx5buplj30ly21pnpd.jpg">
+        </li>
+    </ul>
+    <div class="goods-detail-nav-name-block">
+        <div class="container main-block">
+            <div class="border-line"></div>
+            <h2 class="nav-name">规格参数</h2>
+        </div>
+    </div>
+    <ul class="param-list">
+        <li>
+            <img class="square" src="https://ww1.sinaimg.cn/large/006tKfTcly1fcurx6dzfxj30ly0psn15.jpg" >
+        </li>
+    </ul>
+</div>
+<!--规格-->
