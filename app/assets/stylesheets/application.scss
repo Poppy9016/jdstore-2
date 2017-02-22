@@ -355,7 +355,14 @@ i {
 /*admin*/
 .row{
  margin-top: 100px;
+ margin-bottom: 250px;
 }
+.rowdd{
+ margin-top: 100px;
+
+}
+
+
 /*common*/
 .g-hd {
  position: relative;
@@ -370,6 +377,14 @@ i {
  padding-bottom: 70px;
  background-color: #f5f5f5;
 }
+.g-rowdd{
+ width: 1090px;
+ margin-top: 550px;
+ margin-right: auto;
+ margin-left: auto;
+ margin-bottom: 250px;
+
+}
 .g-row {
  width: 1090px;
  margin-right: auto;
@@ -382,8 +397,6 @@ i {
  display: table;
 }
 .g-ft {
- padding-top: 60px;
- background-color: #fff;
  position:absolute;bottom:0;width:100%;
 }
 .m-ft2 {
@@ -455,7 +468,6 @@ i {
 }
 .g-ft {
  border-top: 0;
- position:absolute;bottom:0;width:100%;
 }
 
 /*snow boots*/
@@ -542,6 +554,7 @@ i {
 }
 .m-newCates {
  margin-top: 60px;
+ margin-bottom: 250px;
  background: #fff
 }
 .m-newCates .g-row:first-child {
@@ -880,7 +893,7 @@ i {
 
   .page-main {
       padding-top: 38px;
-      padding-bottom: 38px;
+      padding-bottom: 300px;
   }
   .container {
    width: 1226px;
