@@ -70,11 +70,11 @@
                 <%= link_to("清空购物车", clean_carts_path ,
                               method: :delete , class: "cart-total",
                               data: { confirm: "你确定要清空整个购物车吗？"} )%>
-                <span class="cart-total">共 <i id="J_cartTotalNum"><%= current_cart.products.count %></i> 件商品</span>
+                <span class="cart-total">共 <i id="J_cartTotalNum"><%= current_cart.products.count %></i> 样商品</span>
             </div>
             <span class="total-price">
                 合计（不含运费）：<em id="J_cartTotalPrice">
-        <%= render_cart_total_price(current_cart) %></em>元
+                    <%= render_cart_total_price(current_cart) %></em>元
                 </span>
             <%= link_to("去结算", checkout_carts_path, method: :post, class: "btn btn-a btn btn-primary")%>
         </div>

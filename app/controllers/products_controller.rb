@@ -1,4 +1,8 @@
 class ProductsController < ApplicationController
+    def home
+        @products = Product.all
+    end
+
     def index
         @products = Product.all
    end
@@ -6,6 +10,7 @@ class ProductsController < ApplicationController
     def show
         @product = Product.find(params[:id])
   end
+
 
     def add_to_cart
         @product = Product.find(params[:id])

@@ -1,0 +1,32 @@
+<h2>页面列表</h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+    <%= link_to("新增页面", new_admin_about_path, class: "btn btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th width="5%">编号</th>
+            <th>标题</th>
+            <th>描述</th>
+            <th width="5%">设置</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @abouts.each do |about| %>
+            <tr>
+                <td>
+                    <%= about.id %>
+                </td>
+                <td>
+                    <%= about.title %>
+                </td>
+                <td>
+                    <%= about.description %>
+                </td>
+                <td>
+                    <%= link_to("编辑", edit_admin_about_path(about) ,class: "aa" ) %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

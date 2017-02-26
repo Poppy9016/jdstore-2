@@ -1,17 +1,33 @@
-<h2>订单列表 </h2>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>生成时间</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @orders.each do |order| %>
-            <tr>
-                <td> <%= link_to(order.id, order_path(order.token)) %> </td>
-                <td> <%= order.created_at.to_s(:long) %> </td>
-            </tr>
-        <% end %>
-    </tbody>
-</table>
+<div class="page-main">
+    <div class="container">
+        <div class="checkout-box">
+            <div class="container-fluid">
+                <h3 class="gnamedd">我的订单</h3>
+                <br>
+                <br>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>订单编号</th>
+                            <th>下单时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @orders.each do |order| %>
+                            <tr>
+                                <td>
+                                    <%= link_to(order.id, order_path(order.token)) %>
+                                </td>
+                                <td>
+                                    <%= order.created_at.to_s(:long) %>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

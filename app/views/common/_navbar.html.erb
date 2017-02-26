@@ -2,10 +2,14 @@
     <div id="" style="margin-top: 60px;">
         <div id="js-funcTab" class="header_fixed">
             <div class="g-row">
+
                 <a class="logo" href="/" title="" target="_top">
+
                     <img src="https://ww2.sinaimg.cn/large/006tNc79ly1fcunsr7uq7j304601vq2t.jpg"/>
                     <span class="dec">每个人都应该被温柔对待</span>
+
                 </a>
+
                 <div class="notLogin">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -28,6 +32,9 @@
                                             <%= link_to("后台设置", admin_products_path ) %>
                                         </li>
                                     <% end %>
+                                    <li>
+                                        <%= link_to("我的订单", account_orders_path ) %>
+                                    </li>
                                     <li> <%= link_to(content_tag(:i, '退出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                                 </ul>
                             </li>
