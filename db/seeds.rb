@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 u = User.first
-u.email = 'poppy@gmail.com' # 可以改成自己的 email
+u.email = '123@qq.com' # 可以改成自己的 email
 
 u.password = '123456'                # 最少要六码
 

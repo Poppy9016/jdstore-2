@@ -1,0 +1,14 @@
+<h2> 添加页面 </h2>
+<br>
+<%= simple_form_for [:admin, @about] do |f| %>
+    <div class="group">
+        <%= f.input :title,label: "标题",placeholder: "请输入页面标题" %>
+    </div>
+    <div class="group">
+        <%= f.input :description,label: "内容",placeholder: "请输入页面内容"%>
+    </div>
+    <div class="group">
+        <%= f.input :url,label: "图片url",placeholder: "请输入图片url" %>
+    </div>
+    <%= f.submit "提交",class: "btn btn-primary btn-sm",data: { disable_with: "Submiting..." } %>
+<% end %>

@@ -1,14 +1,17 @@
+<h2>产品列表</h2>
 <div class="pull-right" style="padding-bottom: 20px;">
     <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>编号</th>
+            <th width="5%">编号</th>
             <th>图片</th>
             <th>标题</th>
             <th>描述</th>
-            <th>设置</th>
+            <th width="8%">价格</th>
+            <th width="8%">库存</th>
+            <th width="8%">设置</th>
         </tr>
     </thead>
     <tbody>
@@ -30,10 +33,17 @@
                     <%= product.title %>
                 </td>
                 <td>
+                    <%= product.description %>
+                </td>
+                <td>
                     <%= product.price %>
                 </td>
                 <td>
+                    <%= product.quantity %>
+                </td>
+                <td>
                     <%= link_to("编辑", edit_admin_product_path(product) ,class: "aa" ) %>
+                    <%= link_to("删除", admin_product_path(product), :method => :delete, :data => { :confirm => "删除后将无法恢复！！！" }) %>
                 </td>
             </tr>
         <% end %>
