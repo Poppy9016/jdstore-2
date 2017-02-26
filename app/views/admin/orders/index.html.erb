@@ -1,9 +1,10 @@
-<h2>订单列表 </h2>
+<h2>订单列表</h2>
+<br>
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>#</th>
-            <th>生成时间</th>
+            <th width="10%">订单编号</th>
+            <th>下单时间</th>
             <th>订购者</th>
             <th>订单状态</th>
         </tr>
@@ -11,7 +12,7 @@
     <tbody>
         <% @orders.each do |order| %>
             <tr>
-                <td> <%= link_to(order.id, admin_order_path(order) ) %> </td>
+                <td> <%= link_to(order.id, admin_order_path(order) ) %></td>
                 <td> <%= order.created_at.to_s(:long) %> </td>
                 <td> <%= order.user.email %></td>
                 <td> <%= order.aasm_state %> </td>
