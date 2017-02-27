@@ -40,6 +40,10 @@
                                                 </div>
                                             </li>
                                         <% end %>
+                                        <% if @products.present? %>
+                                        <% else %>
+                                            抱歉，没找到您要的商品。
+                                    <% end %>
                                     </ul>
                                 </div>
                             </div>

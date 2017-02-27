@@ -299,6 +299,7 @@ i {
  display: block;
  float: right;
  height: 60px;
+ margin-top:-45px;
  line-height: 59px;
  margin-right: 9px;
 }
@@ -1448,3 +1449,25 @@ ul, menu, dir {
 
 
 //*搜索*//
+#imaginary_container{
+    margin-top:30px; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+
+.t2 {
+  margin-top:-17px;
+  margin-left: 300px;
+    width: 200px;
+}
