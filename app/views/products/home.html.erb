@@ -68,6 +68,20 @@
                                         <% end %>
                                     <% end %>
                                 </div>
+                                <div class="bd">
+                                    <h4 class="name">
+                                        <a class="name" title="<%= product.title %>" target="_blank">
+                                            <span class="name">
+                                                <%= link_to product_path(product) do %>
+                                                    <%= product.title %>
+                                                <% end %>
+                                            </span>
+                                        </a>
+                                    </h4>
+                                    <p class="price">
+                                        <span>¥ <%= product.price %></span>
+                                    </p>
+                                </div>
                             </div>
                         </li>
                     <% end %>

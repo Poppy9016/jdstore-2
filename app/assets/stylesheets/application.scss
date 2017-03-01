@@ -18,7 +18,7 @@
  @import "font-awesome";
   @import url(https://fonts.googleapis.com/css?family=Roboto);
 
-/****** LOGIN MODAL ******/
+/****** 登陆 ******/
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;
@@ -53,7 +53,6 @@
   background: #fff;
   border: 1px solid #d9d9d9;
   border-top: 1px solid #c0c0c0;
-  /* border-radius: 2px; */
   padding: 0 8px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -74,13 +73,10 @@
   font-weight: 700;
   height: 36px;
   padding: 0 8px;
-/* border-radius: 3px; */
-/* -webkit-user-select: none;
-  user-select: none; */
 }
 
 .loginmodal-submit {
-  /* border: 1px solid #3079ed; */
+  /* border */
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1);
@@ -88,15 +84,12 @@
   padding: 17px 0px;
   font-family: roboto;
   font-size: 14px;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
 .loginmodal-submit:hover {
-  /* border: 1px solid #2f5bb7; */
   border: 0px;
   text-shadow: 0 1px rgba(0,0,0,0.3);
   background-color: #357ae8;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
 .loginmodal-container a {
@@ -318,10 +311,8 @@ i {
 }
 .logo{
  position: absolute;
-    /*top: 50px;*/
     left: 0;
     z-index: 2;
-    /* width: 180px; */
     height: 40px;
    vertical-align: middle;
    line-height: 60px;
@@ -342,17 +333,16 @@ i {
  background: url(http://p1.bqimg.com/583835/9b83711b95469010.png) no-repeat center;
 }
 .icon-normal-ft2 {
- /*background-position: 0 -2014px;*/
  height: 51px;
  width: 51px;
  background: url(http://p1.bqimg.com/583835/20992670c08948c9.png) no-repeat center;
 }
 .icon-normal-ft3 {
- /*background-position: 0 -2075px;*/
  height: 51px;
  width: 51px;
  background: url(http://p1.bqimg.com/583835/029fb69c354631fb.png) no-repeat center;
 }
+
 /*admin*/
 .row{
  margin-top: 100px;
@@ -598,7 +588,6 @@ i {
 .m-newCates .m-newCate>.hd .frontName {
  float: left;
  margin-top: 9px;
-/*	border-left: 1px solid #666;*/
  font-size: 14px;
  padding: 3px 0 0 5px;
  color: #aaa;
@@ -626,7 +615,7 @@ i {
 
 .m-product .hd {
     position: relative;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
     overflow: hidden;
     background-color: #f4f4f4;
 }
@@ -1470,4 +1459,44 @@ ul, menu, dir {
   margin-top:-17px;
   margin-left: 300px;
     width: 200px;
+}
+
+//*价格展示*//
+.m-product {
+    line-height: 1;
+    text-align: center;
+    font-size: 13px;
+    width: 245px;
+    position: relative;
+}
+.m-newCates .m-product .name {
+    line-height: 20px;
+    margin-bottom: 7px;
+    height: auto;
+}
+.m-product h4.name {
+    padding: 0 10px;
+}
+
+.m-newCates .m-product .price {
+    font-size: 13px;
+    line-height: 13px;
+    color: #d4282d;
+    padding: 1px 0 9px;
+    margin: 0;
+}
+.m-product .price {
+    color: #d4282d;
+    text-align: center;
+}
+.m-newCates .m-product .price span {
+    line-height: 13px;
+    height: 13px;
+    padding: 0;
+}
+.m-product .price span {
+    display: inline-block;
+    overflow: hidden;
+    height: 20px;
+    line-height: 22px;
 }
