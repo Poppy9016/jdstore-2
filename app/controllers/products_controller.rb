@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-    def home
+    def all
         @products = Product.all
     end
 

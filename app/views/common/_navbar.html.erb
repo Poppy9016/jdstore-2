@@ -2,13 +2,13 @@
     <div id="" style="margin-top: 60px;">
         <div id="js-funcTab" class="header_fixed">
             <div class="g-row">
-                <a class="logo" href="/" title="" target="_top">
+                <a class="logo" href="/products" title="" target="_top">
                     <img src="https://ww2.sinaimg.cn/large/006tNc79ly1fcunsr7uq7j304601vq2t.jpg"/>
                     <span class="dec">每个人都应该被温柔对待</span>
                 </a>
                 <div class="t2">
                     <!-- search start-->
-                    <%= form_tag products_path, :method => "get" do %>
+                    <%= form_tag all_path, :method => "get" do %>
                         <div id="imaginary_container">
                             <div class="input-group stylish-input-group">
                                 <%= text_field_tag :search, params[:search], placeholder: "搜索", class: "form-control"%>
