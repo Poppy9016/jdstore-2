@@ -17,9 +17,9 @@
                                     <div class="m-sortbar" >
                                         <div class="category" >
                                             <span class="name" >商品排序：</span>
-                                            <a class="categoryItem j-categoryItem active" ><%= link_to("新品", products_path) %></a>
-                                            <!-- <a  class="categoryItem j-categoryItem" ><%= link_to("销量", products_path(:order => "by_product_quantity")) %></a>
-                                            <a  class="categoryItem j-categoryItem" ><%= link_to("价格", products_path(:order => "by_product_price")) %></a> -->
+                                            <a class="categoryItem j-categoryItem active" ><%= link_to("新品", all_path) %></a>
+                                            <a  class="categoryItem j-categoryItem" ><%= link_to("销量", all_path(:order => "by_quantity")) %></a>
+                                            <a  class="categoryItem j-categoryItem" ><%= link_to("价格", all_path(:order => "by_price")) %></a>
                                         </div>
                                     </div>
                                     <div class="bd">

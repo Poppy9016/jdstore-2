@@ -1,15 +1,23 @@
 class ProductsController < ApplicationController
     def all
+      if params[:category].present?
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.where(category_id: @category_id).recent
+    else
+      @products = case params[:order]
+      when 'by_price'
+          Product.all.order("price DESC")
+        when 'by_quantity'
+            Product.all.order("quantity DESC")
+      else
         @products = Product.all
+      end
     end
+    end
+
 
     def index
         @products = Product.all
-        if params[:search]
-            @products = Product.search(params[:search]).order('created_at DESC')
-        else
-            @products = Product.all.order('created_at DESC')
-          end
    end
 
     def show
